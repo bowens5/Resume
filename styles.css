@@ -1,0 +1,232 @@
+/* ---------- Global Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617 55%);
+  color: #e5e7eb;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* ---------- Layout ---------- */
+.page {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 18px;
+  box-shadow:
+    0 22px 45px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(148, 163, 184, 0.1);
+  padding: 2.5rem 2rem 2.75rem;
+  backdrop-filter: blur(16px);
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 3rem 3rem 3.25rem;
+  }
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #f9fafb;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+}
+
+h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  line-height: 1.5;
+  color: #e5e7eb;
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.header-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.2);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  font-size: 0.8rem;
+  color: #a5f3fc;
+}
+
+/* ---------- Sections & Columns ---------- */
+.section {
+  margin-bottom: 1.75rem;
+}
+
+.subsection {
+  margin-bottom: 1.5rem;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 767px) {
+  .two-column {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Items & Lists ---------- */
+.item {
+  margin-bottom: 1.1rem;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-bottom: 0.15rem;
+}
+
+.item-title {
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.item-meta {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-align: right;
+}
+
+.item-sub {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 0.25rem;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+.bullets-tight li {
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- Utilities ---------- */
+.muted {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.mb-xs {
+  margin-bottom: 0.35rem;
+}
+
+.mb-sm {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Print Styles ---------- */
+@media print {
+  body {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .page {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+    background: #ffffff;
+    color: #111827;
+  }
+
+  a {
+    color: #111827;
+    text-decoration: none;
+  }
+
+  .pill {
+    border: 1px solid #9ca3af;
+    background: #f9fafb;
+    color: #111827;
+  }
+
+  .tagline,
+  .contact,
+  .muted {
+    color: #374151;
+  }
+}
